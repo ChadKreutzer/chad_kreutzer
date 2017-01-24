@@ -1,2 +1,2 @@
-require ‘./config/application'
+require './config/application'
 run Sinatra::Application
