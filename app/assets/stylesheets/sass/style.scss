@@ -1,0 +1,157 @@
+/* mixins, variables, etc. */
+
+@mixin full_background {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: rgb(0, 0, 0);
+  background-attachment: fixed;
+  height: 50vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container-fluid {
+  padding: 0;
+}
+
+/* Fonts and Typography */
+
+@import url(https://fonts.googleapis.com/css?family=Sigmar+One);
+
+h1, .navbar-brand {
+  font-family: 'Sigmar One', cursive;
+}
+.nav, h2, h3, label, #submit, small {
+  font-family: "Trebuchet MS", Helvetica, sans-serif;
+  font-weight: bold;
+}
+.section-heading {
+  display: inline-block;
+  font-size: 3.5em;
+  margin-bottom: 30px;
+}
+p {
+  font-family: "Georgia", serif;
+  font-size: 1.5em;
+}
+
+/* Text Background Design */
+
+.text-bg {
+  padding: 5px;
+  border-radius: 5px;
+  color: rgb(10, 10, 10);
+  background-color: rgb(255, 255, 255);
+  background-color: rgba(200, 200, 200, 0.75);
+  box-shadow: 5px 5px 10px rgb(10, 10, 10);
+}
+
+/* Header and Footer */
+
+footer {
+  position:fixed;
+  left:0px;
+  bottom:0px;
+  width:100%;
+}
+
+/* Home */
+
+#home, #goodbye {
+  @include full_background;
+  background-image: url("/images/me_at_table_mountain.jpg");
+  height: 100vh;
+}
+.jumbotron {
+  background-color: rgb(255, 255, 255);
+  background-color: rgba(200, 200, 200, 0.66);
+  h1 {
+    text-shadow: 5px 5px 10px rgb(10, 10, 10);
+    small {
+      color: rgb(75, 75, 75);
+    }
+  }
+}
+
+/* About */
+
+#about {
+  @include full_background;
+  background-image: url("/images/yellow_grate.jpg");
+}
+#about-body {
+  padding: 20px;
+  background-color: rgb(135, 128, 135);
+}
+
+/* Portfolio */
+
+#portfolio {
+  @include full_background;
+  background-image: url("/images/mecha_needle.jpg");
+}
+
+#portfolio-body {
+  padding: 20px;
+  background-color: rgb(102,108,134);
+  //padding-bottom: 100px;
+}
+
+.flex-container {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  margin-bottom: 50px;
+  
+  display: flex;
+  
+  flex-flow: row wrap;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.project-item {
+  width: 240px;
+  height: 300px;
+  margin-top: 10px;
+  margin-bottom: 200px;
+}
+
+/* Contact */
+
+#contact {
+  @include full_background;
+  background-image: url("/images/union_station.jpg");
+}
+
+#contact-body {
+  padding: 20px;
+  background-color: rgb(255,247,194);
+  padding-bottom: 100px;
+}
+
+form {
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+#li {
+  background: transparent;
+  :hover {
+    color: #4875B4;
+  }
+}
+#gh {
+  background: transparent;
+  :hover {
+    color: #6E5494;
+  }
+}
+#tw {
+  background: transparent;
+  :hover {
+    color: #33CCFF;
+  }
+}
