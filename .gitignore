@@ -1,1 +1,4 @@
 *.sqlite3
+public/uploads
+tmp
+logs
