@@ -1,0 +1,22 @@
+<div id="portfolio">
+  <div class="row">
+    <h2 class="text-bg section-heading text-center">
+      Things I Have Made
+    </h2>
+  </div>
+</div>
+<div id="portfolio-body">
+<ul class="flex-container">
+  <% @projects.each do |project| %>
+      <li class="text-bg thumbnail project-item">
+        <a href=<%= project.url %>>
+          <img class="img-responsive" src=<%= project.image_link %>>
+        </a>
+        <div class="caption">
+          <h3 class="text-center"><%= project.title %></h3>
+          <p><%= project.description %></p>
+        </div>
+      </li>
+  <% end %>
+</ul>
+</div>
