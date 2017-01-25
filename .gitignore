@@ -2,5 +2,5 @@
 public/uploads
 tmp
 logs
-.bundle/
-.c9
+/.bundle
+/.c9

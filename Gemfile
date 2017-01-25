@@ -7,8 +7,6 @@ gem 'activerecord'
 gem 'sinatra-activerecord', require: 'sinatra/activerecord'
 gem 'rake'
 gem 'pony'
-gem 'pg'
-gem 'rails_12factor'
 
 group :development do
   gem 'sqlite3'
@@ -17,5 +15,6 @@ group :development do
 end
 
 group :production do
-  
+  gem 'pg'
+  gem 'rails_12factor'
 end
