@@ -124,6 +124,7 @@ footer {
 #contact {
   @include full_background;
   background-image: url("/images/union_station.jpg");
+  height: 25vh;
 }
 
 #contact-body {

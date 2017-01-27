@@ -1,10 +1,16 @@
+require 'bundler'
+Bundler.require
+Dir["./models/*"].each {|file| require file }
+
+Sass::Plugin.options[:style] = :compressed
+use Sass::Plugin::Rack
+
 get '/' do
     @projects = Project.all
     erb :index
   end
 
   post '/' do
-    require 'pony'
   
     name  = params[:name]
     mail = params[:mail]
