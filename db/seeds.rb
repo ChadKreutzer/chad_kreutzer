@@ -9,8 +9,8 @@ project_list = [
     "Pomodoro Clock",
     "/images/projects/clock.jpg",
     "http://romantic-trouble.surge.sh/",
-    "A pomodoro clock app. I also used this as the sample solution to the " \
-    "pairing project for The Odin Project."
+    "A pomodoro clock that I usedas the sample solution to the pairing " \
+    "project for The Odin Project."
   ],
   [
     "Wikiview",
