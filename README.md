@@ -6,7 +6,6 @@ published to [chadkreutzer.com](http://www.chadkreutzer.com)
 
 ## Still Needs Doing
 
-* Make menu auto hide after clicking in mobile view
 * Implement Sprockets
 * Implement Autoprefixer
 * Add recaptcha
