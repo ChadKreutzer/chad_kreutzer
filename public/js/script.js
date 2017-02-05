@@ -1,4 +1,7 @@
 $(document).ready(function() {
+  $('.navbar-collapse a').click(function(){
+    $(".navbar-collapse").collapse('hide');
+  });
   $('body').scrollspy({ target: '#navbar' })
   $(function() {
     $('a[href*="#"]:not([href="#"])').click(function() {
