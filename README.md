@@ -6,9 +6,7 @@ published to [chadkreutzer.com](http://www.chadkreutzer.com)
 
 ## Still Needs Doing
 
-* Shorten description of Pomodoro so it doesn't cut off on mobile
 * Make menu auto hide after clicking in mobile view
-* Add a favicon
 * Implement Sprockets
 * Implement Autoprefixer
 * Add recaptcha
