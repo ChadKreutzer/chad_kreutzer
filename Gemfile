@@ -8,6 +8,7 @@ gem 'sinatra-activerecord', require: 'sinatra/activerecord'
 gem 'rake'
 gem 'pony'
 gem 'figaro'
+gem 'puma'
 
 group :development do
   gem 'sqlite3'
