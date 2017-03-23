@@ -61,7 +61,7 @@ footer {
 
 #home, #goodbye {
   @include full_background;
-  background-image: url("/images/me_at_table_mountain.jpg");
+  background-image: url("me_at_table_mountain.jpg");
   height: 100vh;
 }
 .jumbotron {
@@ -79,7 +79,7 @@ footer {
 
 #about {
   @include full_background;
-  background-image: url("/images/yellow_grate.jpg");
+  background-image: url("yellow_grate.jpg");
 }
 #about-body {
   padding: 20px;
@@ -90,7 +90,7 @@ footer {
 
 #portfolio {
   @include full_background;
-  background-image: url("/images/mecha_needle.jpg");
+  background-image: url("mecha_needle.jpg");
 }
 
 #portfolio-body {
@@ -127,7 +127,7 @@ footer {
 
 #contact {
   @include full_background;
-  background-image: url("/images/union_station.jpg");
+  background-image: url("union_station.jpg");
   height: 25vh;
 }
 

@@ -1,12 +1,16 @@
 source 'https://rubygems.org'
 
-gem 'sinatra'
+gem 'sinatra', require: 'sinatra/base'
 gem 'redcarpet'
-gem 'sass', require: 'sass/plugin/rack'
+gem 'sass'
+gem 'sprockets'
+gem 'bootstrap-sass'
 gem 'activerecord'
+gem 'font-awesome-sass'
 gem 'sinatra-activerecord', require: 'sinatra/activerecord'
 gem 'rake'
 gem 'pony'
+gem 'uglifier'
 gem 'figaro'
 gem 'puma'
 

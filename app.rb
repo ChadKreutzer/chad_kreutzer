@@ -1,10 +1,10 @@
-require 'bundler'
-Bundler.require
-Dir["./models/*"].each {|file| require file }
+require 'sinatra/base'
 
 class MyApp < Sinatra::Base
-  Sass::Plugin.options[:style] = :compressed
-  use Sass::Plugin::Rack
+  configure :development do
+    require 'sinatra/reloader'
+    register Sinatra::Reloader
+  end
   
   get '/' do
     @projects = Project.all
