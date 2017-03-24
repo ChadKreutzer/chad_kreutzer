@@ -11,13 +11,10 @@ map '/assets/' do
   environment = Sprockets::Environment.new
   environment.js_compressor  = :uglify
   environment.css_compressor = :scss
-  # environment.context_class.class_eval do
-  #   def asset_path(path, options = {})
-  #   end
-  # end
+  
   ASSET_PATH =  [ 'assets/javascripts',
                   'assets/stylesheets',
-                  #'assets/fonts',
+                  'assets/fonts',
                   'public/images'
                 ]
   ASSET_PATH.each { |path_name| environment.append_path path_name }
