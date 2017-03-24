@@ -1,0 +1,7 @@
+gems: [jekyll-paginate]
+markdown: rdiscount
+baseurl: /blog
+rdiscount extensions: [smart]
+paginate: 5
+future: false
+highlighter: pygments

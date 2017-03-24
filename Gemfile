@@ -1,7 +1,10 @@
 source 'https://rubygems.org'
 
 gem 'sinatra', require: 'sinatra/base'
-gem 'redcarpet'
+gem 'haml'
+gem 'jekyll'
+gem 'jekyll-paginate'
+gem 'rdiscount'
 gem 'sass'
 gem 'sprockets'
 gem 'bootstrap-sass'
