@@ -141,6 +141,7 @@ DEPENDENCIES
   rails_12factor
   rake
   rdiscount
+  rouge
   sass
   sinatra
   sinatra-activerecord
