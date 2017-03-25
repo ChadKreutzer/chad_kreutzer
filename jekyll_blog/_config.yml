@@ -1,7 +1,29 @@
-gems: [jekyll-paginate]
-markdown: rdiscount
-baseurl: /blog
-rdiscount extensions: [smart]
-paginate: 5
-future: false
-highlighter: rouge
+# Site Settings
+title:               A Crack in the Code
+tagline:             Musings on Coding and Life
+description:
+baseurl:            /blog
+author:
+  name:              "Chad Kreutzer"
+  email:             "chadkreutzer@outlook.com"
+  twitter:           "kanthalion"
+  instagram:         "chadkreutzer"
+  github:            "ChadKreutzer"
+  facebook:          "chad.kreutzer"
+  linkedin:          "chad-kreutzer-888a9b29"
+navigation:
+- title: About
+  url: /about
+- title: Writing
+  url: /writing
+- title: Contact
+  url: /contact
+
+paginate:            5
+disqus:              #"your-disqus"
+
+# Build settings
+markdown:            rdiscount
+highlighter:         rouge
+permalink:           none
+gems:                [jekyll-paginate]

@@ -1,16 +1,35 @@
 ---
-layout: layout
-title: Jekyll Base
+layout: default
+title: Home
 ---
 
-<div class="content">
-  <div class="related">
-    <ul>
-      {% for post in site.posts %}
-      <li>
-	<span>{{ post.date | date: "%B %e, %Y" }}</span> <a href="{{ post.url | prepend:site.baseurl }}">{{ post.title }}</a>
-      </li>
-      {% endfor %}
-    </ul>
-  </div>
+{% for post in paginator.posts %}
+<div class="posts">
+  <h1>
+    <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
+  </h1>
+  {% if post.image.teaser %}
+    <a href="{{ site.baseurl }}{{ post.url }}"><img src="{{ site.baseurl }}/images/{{ post.image.teaser }}"></a>
+  {% endif %}
+  <p>
+    {{ post.content | strip_html | truncate: 350 }} <a href="{{ site.baseurl }}{{ post.url }}">Read more</a>
+    <span class="post-date" style="margin-top:3px"><i class="fa fa-calendar" aria-hidden="true"></i> {{ post.date | date_to_string }} - <i class="fa fa-clock-o" aria-hidden="true"></i> {% include read-time.html %}</span>
+  </p>
+</div>
+{% endfor %}
+
+<!-- Pagination links -->
+<div class="pagination">
+  {% if paginator.next_page %}
+    <a class="pagination-button pagination-active" href="{{ site.baseurl }}{{ paginator.next_page_path }}/index.html" class="next">Older</a>
+  {% else %}
+    <span class="pagination-button">Older</span>
+  {% endif %}
+
+  {% if paginator.previous_page %}
+    <a class="pagination-button pagination-active" href="{{ site.baseurl }}{{ paginator.previous_page_path }}/index.html">Newer</a>
+    {% else %}
+      <span class="pagination-button">Newer</span>
+  {% endif %}
+
 </div>
