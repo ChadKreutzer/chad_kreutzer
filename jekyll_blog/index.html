@@ -2,14 +2,26 @@
 layout: default
 title: Home
 ---
+<div id="blog">
+  <div class="row">
+    <h2 class="text-bg section-heading text-center">
+      {{ site.title }}
+      <small class="masthead-subtitle">{{ site.tagline }}</small>
+    </h2>
+  </div>
+</div>
 
+<div id="blog-body">
+  <div class="container">
+    <div class="row">
+      <div class="text-bg col-sm-10 col-sm-offset-1">
 {% for post in paginator.posts %}
 <div class="posts">
   <h1>
     <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
   </h1>
   {% if post.image.teaser %}
-    <a href="{{ site.baseurl }}{{ post.url }}"><img src="{{ site.baseurl }}/images/{{ post.image.teaser }}"></a>
+    <a href="{{ site.baseurl }}{{ post.url }}"><img src="{{ site.baseurl }}/images/{{ post.image.teaser }}" class="img-responsive center-block"></a>
   {% endif %}
   <p>
     {{ post.content | strip_html | truncate: 350 }} <a href="{{ site.baseurl }}{{ post.url }}">Read more</a>
@@ -19,7 +31,8 @@ title: Home
 {% endfor %}
 
 <!-- Pagination links -->
-<div class="pagination">
+<div class="row">
+<div class="pagination center-block">
   {% if paginator.next_page %}
     <a class="pagination-button pagination-active" href="{{ site.baseurl }}{{ paginator.next_page_path }}/index.html" class="next">Older</a>
   {% else %}
@@ -27,9 +40,14 @@ title: Home
   {% endif %}
 
   {% if paginator.previous_page %}
-    <a class="pagination-button pagination-active" href="{{ site.baseurl }}{{ paginator.previous_page_path }}/index.html">Newer</a>
+    <a class="pagination-button pagination-active" href="{{ site.baseurl }}{{ paginator.previous_page_path }}index.html">Newer</a>
     {% else %}
       <span class="pagination-button">Newer</span>
   {% endif %}
 
+</div>
+</div>
+</div>
+</div>
+</div>
 </div>

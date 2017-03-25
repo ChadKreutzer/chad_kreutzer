@@ -37,9 +37,12 @@ class MyApp < Sinatra::Base
   end
   
   get "/blog/?*" do
+    main_site = Regexp.new('/^\/#/')
     blog_page = params['splat'].first
     if blog_page.blank?
       send_file "jekyll_blog/_site/index.html"
+    elsif  main_site === blog_page
+      redirect blog_page
     else
       send_file "jekyll_blog/_site/#{blog_page}"
     end

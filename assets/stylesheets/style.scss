@@ -160,3 +160,50 @@ form {
     color: #33CCFF;
   }
 }
+
+/* Blog */
+
+#blog {
+  @include full_background;
+  background-image: url("cracked_keyboard.jpg");
+}
+
+#blog-body {
+  padding: 20px;
+  background-color: rgb(102,108,134);
+  //padding-bottom: 100px;
+}
+
+.pagination {
+  overflow: hidden;
+  text-align: center;
+}
+
+.pagination a {
+  text-decoration: none;
+}
+
+.pagination-button {
+  color: #999;
+  border: 1px solid #e0e0e0;
+  padding: 15px 45px;
+  display: inline-block;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.pagination-active {
+  color: black;
+}
+
+.pagination-active:hover {
+  background-color: #e0e0e0;
+}
+
+.related-posts {
+  list-style: none;
+}
+
+.related-posts a {
+  text-decoration: none;
+}
