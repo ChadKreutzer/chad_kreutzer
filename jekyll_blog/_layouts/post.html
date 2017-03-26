@@ -5,7 +5,7 @@ layout: default
 <div id="blog-body">
   <div class="container">
     <div class="row">
-      <div class="text-bg col-sm-10 col-sm-offset-1">
+      <div class="text-bg col-sm-10 col-sm-offset-1 post">
 <h1>
   {{ page.title }}
 </h1>
@@ -15,8 +15,9 @@ layout: default
 {% endif %}
 
 {{ content }}
-
-<span class="post-date">
+<div class="row">
+  
+<h4 class="col-sm-6 post-date">
   Written on
   {% assign d = page.date | date: "%-d"  %}
   {{ page.date | date: "%B" }}
@@ -27,8 +28,12 @@ layout: default
     {% else %}{{ d }}th{% endcase %},
   {{ page.date | date: "%Y" }}
   by {{ site.author.name }}
-</span>
+</h4>
+
+<div class="col-sm-5">
 {% include social-sharing.html %}
+</div>
+</div>
 {% include related-posts.html %}
 </div>
 </div>
