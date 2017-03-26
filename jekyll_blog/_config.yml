@@ -3,7 +3,7 @@ title:               A Crack in the Code
 tagline:             Musings on Coding and Life
 description:
 url:                https://chad-kreutzer-chadkreutzer.c9users.io
-baseurl:            /blog
+baseurl:            /crack-in-the-code
 author:
   name:              "Chad Kreutzer"
   email:             "chadkreutzer@outlook.com"
@@ -21,7 +21,7 @@ navigation:
   url: /contact
 
 paginate:            5
-disqus:              #"your-disqus"
+disqus:              crack-in-the-code
 
 # Build settings
 markdown:            rdiscount

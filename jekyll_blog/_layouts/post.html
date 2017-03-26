@@ -35,11 +35,15 @@ layout: default
 </div>
 </div>
 {% include related-posts.html %}
+
+<hr>
+
+{% if site.disqus %}
+  {% include disqus.html %}
+{% endif %}
 </div>
 </div>
 </div>
 </div>
 
-{% if site.disqus %}
-  {% include disqus.html %}
-{% endif %}
+

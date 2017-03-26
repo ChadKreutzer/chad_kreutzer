@@ -20,6 +20,13 @@
 
 @import url(https://fonts.googleapis.com/css?family=Sigmar+One);
 
+// body {
+//   margin: 30px;
+//   * {
+//     border: 1px solid red;
+//   }
+// }
+
 h1 {
   font-family: 'Sigmar One', cursive;
 }
@@ -182,6 +189,7 @@ form {
 #blog {
   @include full_background;
   background-image: url("cracked_keyboard.jpg");
+  //height: 75vh;
 }
 
 #blog-body {
@@ -219,6 +227,12 @@ form {
 
 .pagination-active:hover {
   background-color: #e0e0e0;
+}
+
+.posts {
+  margin-bottom: 5rem;
+  padding: 0px;
+  list-style: none;
 }
 
 .related-posts {

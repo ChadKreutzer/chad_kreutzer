@@ -36,7 +36,7 @@ class MyApp < Sinatra::Base
     redirect '/#contact'
   end
   
-  get "/blog/?*" do
+  get "/crack-in-the-code/?*" do
     main_site = Regexp.new('/^\/#/')
     blog_page = params['splat'].first
     if blog_page.blank?
