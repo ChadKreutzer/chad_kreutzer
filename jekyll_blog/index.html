@@ -34,13 +34,13 @@ title: Home
 <div class="row">
 <div class="pagination center-block">
   {% if paginator.next_page %}
-    <a class="pagination-button pagination-active" href="{{ site.baseurl }}{{ paginator.next_page_path }}/index.html" class="next">Older</a>
+    <a class="pagination-button pagination-active" href="{{ site.baseurl }}{{ paginator.next_page_path }}/index.html" class="next"><h4>Older</h4></a>
   {% else %}
     <span class="pagination-button">Older</span>
   {% endif %}
 
   {% if paginator.previous_page %}
-    <a class="pagination-button pagination-active" href="{{ site.baseurl }}{{ paginator.previous_page_path }}index.html">Newer</a>
+    <a class="pagination-button pagination-active" href="{{ site.baseurl }}{{ paginator.previous_page_path }}index.html"><h4>Newer</h4></a>
     {% else %}
       <span class="pagination-button">Newer</span>
   {% endif %}
