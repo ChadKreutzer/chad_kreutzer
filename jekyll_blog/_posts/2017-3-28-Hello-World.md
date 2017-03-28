@@ -22,7 +22,7 @@ Why start a blog? Well, the cynical reason is that I've been learning to code fo
 
 ### How?
 
-Blogging about my coding struggles and triumphs will not only help the hypothetical future learner, but it will also help me via the [rubber duck](https://en.wikipedia.org/wiki/Rubber_duck_debugging) method where explaining code to someone else can help you understand it better and work out problems in it yourself. Another benefit for me is now I will have a single resource to go back to when I want to solve the same problem again rather than reinventing the wheel. Not to mention a similar benefit to looking back to previous beers I've made, recipies I've tried, and gaming experiences I have had.
+Blogging about my coding struggles and triumphs will not only help the hypothetical future learner, but it will also help me via the [rubber duck](https://en.wikipedia.org/wiki/Rubber_duck_debugging) method where explaining code to someone else can help you understand it better and work out problems in it yourself. Another benefit for me is now I will have a single resource to go back to when I want to solve the same problem again rather than reinventing the wheel. Not to mention a similar benefit to looking back to previous beers I've made, recipes I've tried, and gaming experiences I have had.
 
 ### When?
 
