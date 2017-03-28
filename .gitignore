@@ -5,5 +5,8 @@ tmp
 logs
 /.bundle
 /.c9
+# _site
+.sass-cache
+.jekyll-metadata
 # Ignore application configuration
 /config/application.yml
