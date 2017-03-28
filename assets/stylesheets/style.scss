@@ -200,6 +200,8 @@ form {
 
 .post {
   margin-top: 40px;
+  padding-left: 7px;
+  padding-right: 7px;
 }
 
 .pagination {
@@ -230,7 +232,8 @@ form {
 
 .posts {
   margin-bottom: 5rem;
-  padding: 0px;
+  padding-left: 7px;
+  padding-right: 7px;
   list-style: none;
 }
 
@@ -244,8 +247,4 @@ form {
 
 .post-content {
   margin-top: 10px;
-}
-
-.post-container {
-  padding: 10px;
 }
