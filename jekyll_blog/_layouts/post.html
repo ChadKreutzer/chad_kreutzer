@@ -13,10 +13,11 @@ layout: default
 {% if page.image.feature %}
   <img src="{{ site.baseurl }}/images/{{ page.image.feature }}" class="img-responsive center-block">
 {% endif %}
-
-{{ content }}
+<div class="post-content">
+  {{ content }}
+<div>
 <div class="row">
-  
+
 <h4 class="col-sm-6 post-date">
   Written on
   {% assign d = page.date | date: "%-d"  %}
@@ -45,5 +46,3 @@ layout: default
 </div>
 </div>
 </div>
-
-
