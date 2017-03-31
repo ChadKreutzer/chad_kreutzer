@@ -2,7 +2,7 @@
 layout: post
 title: "Hello World"
 categories: journal
-tags: [personal, code]
+tags: [personal, code, introduction]
 image:
   feature: cracked.jpg
   teaser: cracked-teaser.jpg
