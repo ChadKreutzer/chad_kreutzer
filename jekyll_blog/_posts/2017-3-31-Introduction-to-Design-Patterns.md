@@ -34,7 +34,7 @@ Design patterns are not something these four guys got together and made up one d
 
 Sandi Metz does a really good job of explaining this concept in her book, *99 Bottles of OOP*. You can find a sample chapter [here](https://www.sandimetz.com/99bottles/sample/). I plan to keep this in mind as I go through *Design Patterns*.
 
-Although they don't call it a proper design pattern, **Delegation** is a good example of the CSR code problem.
+Although they don't call it a proper design pattern, **Delegation** is a good example of the Clean, Simple, Reusable (CSR) code problem.
 
 ### Delegation
 
