@@ -1,0 +1,286 @@
+<!doctype html>
+<html>
+
+<head>
+
+  <title>
+    
+      Introduction to Design Patterns | A Crack in the Code
+    
+  </title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="/assets/app.css">
+  <link rel="stylesheet" href="/crack-in-the-code/css/syntax.css">
+  <link rel="shortcut icon" href="/images/logo.png" type="image/x-icon" />
+  
+  <script type="text/javascript" async
+    src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+  </script>
+
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-80213386-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+
+</head>
+
+
+<body>
+
+  <div class="container-fluid">
+    <header class="navbar navbar-inverse navbar-fixed-top">
+	<div class="container">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+				data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<a class="navbar-left" href="/#home"><img class="img-responsive" src="/images/logo.svg"></a>
+		</div>
+		<div id="navbar" class="collapse navbar-collapse">
+			<ul class="nav navbar-nav navbar-right">
+				<li><a href="/#home">Home</a></li>
+		        <li><a href="/#about">About</a></li>
+		        <li><a href="/#portfolio">Portfolio</a></li>
+		        <li><a href="/#contact">Contact</a></li>
+		        <li><a href="/crack-in-the-code">Blog</a></li>
+			</ul>
+		</div>
+	</div>
+</header>
+
+
+    <div class="post-container">
+      <div id="blog-body">
+  <div class="container">
+    <div class="row">
+      <div class="text-bg col-sm-10 col-sm-offset-1 post">
+<h1>
+  Introduction to Design Patterns
+</h1>
+
+
+  <img src="/crack-in-the-code/images/design-patterns.jpg" class="img-responsive center-block">
+
+<div class="post-content">
+  <p><a href="https://www.amazon.com/gp/product/0201633612/ref=as_li_tl?ie=UTF8&amp;tag=chadkreutzer-20&amp;camp=1789&amp;creative=9325&amp;linkCode=as2&amp;creativeASIN=0201633612&amp;linkId=868c3a314f3c8199a22c226b2dad8037">Design Patterns: Elements of Reuseable Object-Oriented Software</a>, also known as "The Gang of Four," is a seminal book in the coding world. Since I've been working in Ruby and Ruby is an object oriented language, I thought it would behove me to learn how to do it right. And what better way to do that than sharing it with others? This will be a series on the different design patterns cataloged in the book.</p>
+
+<p>Since twenty-three is an awful lot, I'll start with the eight recommended in the Guide to Readers section:</p>
+
+<ul>
+<li>Abstract Factory</li>
+<li>Factory Method</li>
+<li>Adapter</li>
+<li>Observer</li>
+<li>Composite</li>
+<li>Strategy</li>
+<li>Decorator</li>
+<li>Template Method</li>
+</ul>
+
+
+<p>According to the Gang of Four, these are the simplest and most common patterns and "This subset will help you understand design patterns in particular and good object-oriented design in general." After I finish these, I'll reassess and decide if it is worth continuing on blogging about the other fifteen. So, on with the show!</p>
+
+<h3>Introduction</h3>
+
+<p>Design patterns are not something these four guys got together and made up one day, but rather they are a codification of solutions programmers have found to common problems. Probably my biggest takeaway from this chapter is this:</p>
+
+<blockquote><p>Don't use a design pattern just because you can: Everything should serve the purpose of clean, simple, and reusable code.</p></blockquote>
+
+<p>Sandi Metz does a really good job of explaining this concept in her book, <em>99 Bottles of OOP</em>. You can find a sample chapter <a href="https://www.sandimetz.com/99bottles/sample/">here</a>. I plan to keep this in mind as I go through <em>Design Patterns</em>.</p>
+
+<p>Although they don't call it a proper design pattern, <strong>Delegation</strong> is a good example of the CSR code problem.</p>
+
+<h3>Delegation</h3>
+
+<p>Inheritance is the usual method you see to add functionality from one class into another one:</p>
+
+<pre><code>  class Rectangle
+    attr_accessor :height, :width
+    attr_reader :area
+
+    def area
+      @heigh * @width
+    end
+  end
+
+  class Window &lt; Rectangle
+    attr_accessor :pane
+    def initialize
+      @pane = "Glass"
+    end
+  end
+</code></pre>
+
+<p>This works. You now have a rectangular window object with access to height, width, and area methods. But what if you want a circular window? Sure, you can make a circular window class that inherits from a circle class, but you start needing a new class for every shape. Or what if there were some methods of Rectangle you didn't really want Window to have? Here is where delegation comes in:</p>
+
+<pre><code>  class Rectangle
+    attr_accessor :height, :width
+    attr_reader :area
+    def initialize(height, width)
+      @height = height
+      @width = width
+    end
+
+    def area
+      @height * @width
+    end
+  end
+
+  class Window
+    attr_accessor :pane
+    attr_reader :area
+    def initialize(delegate)
+      @area = delegate.area
+      @pane = 'Glass'
+    end
+  end
+</code></pre>
+
+<p>Now we still have a Rectangle class, but instead of a Window class inheriting all of Rectangle's methods, the Window class receives a rectangle object and uses it's area method. What if you want to make a circular window now? Easy: just make a circle class that has an area method and pass it in instead of a rectangle. This is adding functionality via composition instead of inheritance. I get the impression that this will be a recurring theme throughout the book.</p>
+
+<p>Delegation makes the classes more reusable and dynamic, but it could get confusing to follow if you start nesting classes like Russian dolls, so unless you are mindful of when and where you are using the pattern, you could make your code less clean and simple.</p>
+
+<p>That's enough for Chapter one. Chapter two is a case study illustrating the use of Design Patterns in the wild. My next post about <em>Design Patterns</em> will be on the <strong>Abstract Factory</strong> pattern.</p>
+
+<div>
+<div class="row">
+
+<h4 class="col-sm-6 post-date">
+  Written on
+  
+  March
+  31st
+    ,
+  2017
+  by Chad Kreutzer
+</h4>
+
+<div class="col-sm-5">
+<h4 class="post-date text-right">Feel free to share!</h4>
+  <div class="sharing-icons text-right">
+    <a href="https://twitter.com/intent/tweet?text=Introduction to Design Patterns&amp;url=http://www.chadkreutzer.com/crack-in-the-code/coding/Introduction-to-Design-Patterns.html&amp;via=kanthalion" target="_blank" class="tw"><i class="fa fa-twitter fa-2x" aria-hidden="true"></i></a>
+    <a href="https://www.facebook.com/sharer/sharer.php?u=http://www.chadkreutzer.com/crack-in-the-code/coding/Introduction-to-Design-Patterns.html&amp;title=Introduction to Design Patterns" target="_blank" class="fb"><i class="fa fa-facebook fa-2x" aria-hidden="true"></i></a>
+    <a href="https://plus.google.com/share?url=http://www.chadkreutzer.com/crack-in-the-code/coding/Introduction-to-Design-Patterns.html" target="_blank" class="gp"><i class="fa fa-google-plus fa-2x" aria-hidden="true"></i></a>
+  </div>
+
+</div>
+</div>
+<div class="row">
+<div class="pagination center-block">
+  <a class="pagination-button pagination-active" href="/crack-in-the-code">
+    <h4>Read Another Post</h4></a>
+</div>
+</div>
+
+<div class="related">
+  <h1 >You may also enjoy:</h1>
+  
+  <ul class="related-posts">
+    
+      
+        
+        
+      
+    
+      
+        
+        
+      
+    
+      
+        
+        
+      
+    
+      
+        
+        
+      
+    
+      
+        
+        
+      
+        
+          <li>
+            <h3>
+              <a href="/crack-in-the-code/journal/Hello-World.html">
+                Hello World
+                <small>March 28, 2017</small>
+              </a>
+            </h3>
+          </li>
+          
+        
+      
+    
+      
+        
+        
+      
+    
+      
+        
+        
+      
+        
+        
+      
+    
+  </ul>
+</div>
+
+
+<hr>
+
+
+  <section class="disqus">
+  <div id="disqus_thread"></div>
+  <script type="text/javascript">
+    var disqus_shortname = 'crack-in-the-code';
+    var disqus_developer = 0;
+    (function() {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</section>
+
+</div>
+</div>
+</div>
+</div>
+
+    </div>
+
+    <footer class="footer navbar-inverse">
+  <span id="logo-maker" class="pull-left">
+    Logo made with <a href="http://logomakr.com" title="Logo Maker">Logo Maker</a>
+  </span>
+  <span class="pull-right">
+    <a toggle="tooltip" title="I took these photos and have chosen to license them under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License"
+      rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">
+      <img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/80x15.png" />
+    </a>
+  </span>
+</footer>
+
+  </div>
+  <script src="/assets/app.js"></script>
+</body>
+</html>
