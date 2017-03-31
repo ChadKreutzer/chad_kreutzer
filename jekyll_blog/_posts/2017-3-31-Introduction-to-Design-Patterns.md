@@ -11,7 +11,7 @@ image:
   creditlink:
 ---
 
-[Design Patterns: Elements of Reuseable Object-Oriented Software](https://www.amazon.com/gp/product/0201633612/ref=as_li_tl?ie=UTF8&tag=chadkreutzer-20&camp=1789&creative=9325&linkCode=as2&creativeASIN=0201633612&linkId=868c3a314f3c8199a22c226b2dad8037), also known as "The Gang of Four," is a seminal book in the coding world. Since I've been working in Ruby and Ruby is an object oriented language, I thought it would behove me to learn how to do it right. And what better way to do that than sharing it with others? This will be a series on the different design patterns cataloged in the book.
+[Design Patterns: Elements of Reuseable Object-Oriented Software](https://www.amazon.com/gp/product/0201633612/ref=as_li_tl?ie=UTF8&tag=chadkreutzer-20&camp=1789&creative=9325&linkCode=as2&creativeASIN=0201633612&linkId=868c3a314f3c8199a22c226b2dad8037), also known as "The Gang of Four," is a seminal book in the coding world. Since I've been working in Ruby and Ruby is an object oriented language, I thought it would behoove me to learn how to do it right. And what better way to do that than sharing it with others? This will be a series on the different design patterns cataloged in the book.
 
 Since twenty-three is an awful lot, I'll start with the eight recommended in the Guide to Readers section:
 
@@ -82,7 +82,7 @@ This works. You now have a rectangular window object with access to height, widt
     end
   end
 ```
-Now we still have a Rectangle class, but instead of a Window class inheriting all of Rectangle's methods, the Window class receives a rectangle object and uses it's area method. What if you want to make a circular window now? Easy: just make a circle class that has an area method and pass it in instead of a rectangle. This is adding functionality via composition instead of inheritance. I get the impression that this will be a recurring theme throughout the book.
+Now we still have a Rectangle class, but instead of a Window class inheriting all of Rectangle's methods, the Window class receives a rectangle object and uses its area method. What if you want to make a circular window now? Easy: just make a circle class that has an area method and pass it in instead of a rectangle. This is adding functionality via composition instead of inheritance. I get the impression that this will be a recurring theme throughout the book.
 
 Delegation makes the classes more reusable and dynamic, but it could get confusing to follow if you start nesting classes like Russian dolls, so unless you are mindful of when and where you are using the pattern, you could make your code less clean and simple.
 
