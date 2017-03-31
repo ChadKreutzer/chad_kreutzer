@@ -51,13 +51,44 @@ Inheritance is the usual method you see to add functionality from one class into
 
 ```
   class Rectangle
-    attr_accessor :height, :width, :area
+    attr_accessor :height, :width
+    attr_reader :area
+    
+    def area
+      @heigh * @width
+    end
+  end
+
+  class Window < Rectangle
+    attr_accessor :pane
+    def initialize
+      @pane = "Glass"
+    end
+  end
+```
+This works. You now have a rectangular window object with access to height, width, and area methods. But what if you want a circular window? Sure, you can make a circular window class that inherits from a circle class, but you start needing a new class for every shape. Or what if there were some methods of Rectangle you didn't really want Window to have? Here is where delegation comes in:
+
+```
+  class Rectangle
+    attr_accessor :height, :width
+    attr_reader :area
     def initialize(height, width)
       @height = height
       @width = width
     end
 
     def area
-      @heigh * @width
+      @height * @width
     end
   end
+
+  class Window
+    attr_accessor :pane
+    attr_reader :area
+    def initialize(delegate)
+      @area = delegate.area
+      @pane = 'Glass'
+    end
+  end
+```
+Now we still have a Rectangle class, but instead of a Window class inheriting all of Rectangle's methods, the Window class receives a rectangle object and uses it's area method. What if you want to make a circular window now? Easy: just make a circle class that has an area method and pass it in instead of a rectangle.
