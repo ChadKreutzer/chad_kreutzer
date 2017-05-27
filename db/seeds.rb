@@ -25,21 +25,6 @@ project_list = [
     "A random quote machine that makes use of some of my pictures."
   ],
   [
-<<<<<<< HEAD
-    "Widdle Waskles Grooming",
-    "/images/projects/widdle.jpg",
-    "https://stark-bastion-50262.herokuapp.com/",
-    "A website I made for a friend. It also has a " \
-    "<a href='https://stark-bastion-50262.herokuapp.com/jenna'>handmade CMS</a>" \
-    " (username: user password: password)"
-  ],
-  [
-    "Caesar's Cipher",
-    "/images/projects/caesar.jpg",
-    "https://salty-hamlet-78507.herokuapp.com/",
-    "A sinatra front end for a Ruby Caesar's Cipher project"
-  ]
-=======
     "Widdle Waskles",
     "/images/projects/widdle.jpg",
     "https://stark-bastion-50262.herokuapp.com/",
@@ -51,8 +36,8 @@ project_list = [
     "Caesar's Cipher",
     "images/projects/caesar.jpg",
     "https://salty-hamlet-78507.herokuapp.com/",
-    "A sinatra front end for a Ruby Caesar's Cipher program"]
->>>>>>> e682e4d86bf055746cd60f94f69a28c972f54cc6
+    "A sinatra front end for a Ruby Caesar's Cipher program"
+  ]
 ]
 
 project_list.each do | title, image, url, description |
