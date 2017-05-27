@@ -9,7 +9,8 @@
   <h3>All of them made by hand with pride</h3>
 <ul class="flex-container">
   <% @projects.each do |project| %>
-      <li class="text-bg thumbnail project-item">
+      <div class="text-bg" style="margin:10px">
+      <li class="thumbnail project-item">
         <a href=<%= project.url %>>
           <img class="img-responsive" src=<%= project.image_link %>>
         </a>
@@ -18,6 +19,7 @@
           <p><%= project.description %></p>
         </div>
       </li>
+      </div>
   <% end %>
 </ul>
 </div>

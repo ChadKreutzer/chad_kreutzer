@@ -2,10 +2,12 @@
 sqlite: &sqlite
   host: 127.0.0.1
   adapter: sqlite3
+  pool: 5
 
 development:
   <<: *sqlite
   database: db/development.sqlite3
+  # pool: 5
 
 test:
   <<: *sqlite
